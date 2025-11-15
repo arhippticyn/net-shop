@@ -1,0 +1,30 @@
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 15px;
+    width: 350px;
+    padding: 10px;
+}
+
+.productCardTitle {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.productCardBtn {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background: blue;
+    color: white;
+    border-radius: 10px;
+    transition: background, color ease .8s;
+
+    &:hover {
+        background: rgb(3, 3, 204);
+        color: #e1dede;
+    }
+}

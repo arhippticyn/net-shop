@@ -1,0 +1,12 @@
+.categories {
+    display: flex;
+    column-gap: 10px;
+}
+
+.category {
+    list-style: none;
+    
+    & button {
+        font-size: 16px;
+    }
+}

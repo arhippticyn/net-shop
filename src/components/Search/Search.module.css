@@ -1,0 +1,22 @@
+.search {
+    padding: 0px 35px;
+}
+
+.input {
+    height: 30px;
+    width: 200px;
+
+    &::placeholder {
+        font-size: 17px;
+    }
+}
+
+.button {
+    height: 33px;
+    width: 100px;
+    margin-left: 5px;
+    background: #553dbd;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+}
