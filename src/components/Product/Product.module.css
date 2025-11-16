@@ -17,6 +17,12 @@
     cursor: pointer;
 }
 
+.addQuantity {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .productCardTitle {
     font-weight: 500;
     font-size: 17px;
