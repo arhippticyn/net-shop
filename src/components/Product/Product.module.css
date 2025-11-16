@@ -9,6 +9,14 @@
     padding: 10px;
 }
 
+.close {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
 .productCardTitle {
     font-weight: 500;
     font-size: 17px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getCategories, getselectedCategory } from '../../redux/constans';
+import { getCategories, getselectedCategory } from '../../redux/selectors';
 import styles from './Categories.module.css'
 
 

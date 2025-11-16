@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Search.module.css'
 import { useSelector } from 'react-redux';
-import { getSearchQuery } from '../../redux/constans';
+import { getSearchQuery } from '../../redux/selectors';
 
 const Search = () => {
     const search = useSelector(getSearchQuery)

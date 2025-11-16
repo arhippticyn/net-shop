@@ -60,7 +60,7 @@ const initialState = {
   categories: ['Електроніка', 'Одяг', 'Книги', 'Побутова техніка'],
   selectedCategory: 'all',
   searchQuery: '',
-  sortBy: ['name', 'price', 'quantity'],
+  sortBy: 'name', // 'name', 'price', 'quantity'
   lowStockThreshold: 5
 }
 
