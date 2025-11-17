@@ -4,8 +4,10 @@ import { getProducts } from '../../redux/selectors';
 import styles from './Products.module.css'
 import Product from '../Product/Product';
 
+
 const Products = () => {
     const products = useSelector(getProducts)
+
 
   return (
     <ul className={styles.products}>

@@ -57,16 +57,3 @@ export const SET_SORT_BY = (sort) => {
         payload: sort
     }
 }
-
-export const PROCESS_SALE = (id,amount) => {
-    return {
-        type:'products/PROCESS_SALE',
-        payload: {id,amount}
-    }
-}
-
-export const CHECK_LOW_STOCK = () => {
-    return {
-        type:'products/CHECK_LOW_STOCK',
-    }
-}

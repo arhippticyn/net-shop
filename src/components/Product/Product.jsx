@@ -11,7 +11,7 @@ const Product = ({ product }) => {
   const [isOpen, setOpen] = useState(false)
  
   const handleDelete = () => dispatch(DELETE_PRODUCT(product.id))
-  const handleAdd = () => dispatch(RESTOCK_PRODUCT(product.id, product.quantity))
+  const handleAdd = () => dispatch(RESTOCK_PRODUCT(product.id, 1))
   return (
     <li  className={styles.productCard}>
       <button className={styles.UpdateBtn} onClick={() => setOpen(prev => !prev)}>Update</button>
@@ -20,7 +20,7 @@ const Product = ({ product }) => {
         <p className={styles.productCardPrice}>Price: {product.price}$</p>
         <p className={styles.productCardQuantity}>Quantity: {product.quantity} <button onClick={handleAdd} className={styles.addQuantity}><CiCirclePlus /></button></p>
 
-        {product.quantity > 0 ? <button className={styles.productCardBtn}>Buy</button> : 'Not of them'}
+        {product.quantity > 0 ? <button className={styles.productCardBtn}>Buy</button> : <p>Not of them</p>}
 
         {isOpen ? <UpdateProduct product={product} /> : null}
     </li>

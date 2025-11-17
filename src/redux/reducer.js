@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const initialState = {
   products: [
   {
@@ -75,11 +77,75 @@ const productReducer = (state = initialState, action) => {
                 ]
             };
 
+          case 'products/UPDATE_PRODUCT':
+            return {
+              ...state,
+              products: state.products.map((product) => 
+              product.id === action.payload.id ? {...product, ...action.payload.updateData} : product
+              )
+            };
+
+          case 'products/DELETE_PRODUCT':
+            return {
+              ...state,
+              products: state.products.filter((product) => product.id !== action.payload)
+            };
+
+          case 'products/RESTOCK_PRODUCT':
+            return {
+              ...state,
+              products: state.products.map(product => 
+                product.id === action.payload.id ? {...product, quantity: product.quantity + action.payload.quantity} : product
+              )
+            }
+
         default:
             return state
     }
 }
 
-export const rootReducer = (state = initialState, action) => {
-    return state
+const categoriesReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'categories/SET_CATEGORY_FILTER':
+      return {
+        ...state,
+        selectedCategory: action.payload
+      };
+
+    default:
+      return state
+  }
 }
+
+const searchReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'searchQuery/SET_SEARCH_QUERY':
+      return {
+        ...state,
+        searchQuery: action.payload
+      };
+
+    default: 
+     return state
+  }
+}
+
+const sortReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'sortBy/SET_SORT_BY':
+      return {
+        ...state,
+        sortBy: action.payload
+      }
+
+    default:
+      return state
+  }
+}
+
+export const rootReducer = combineReducers({
+  products: productReducer,
+  categories:categoriesReducer,
+  searchQuery: searchReducer,
+  sortBy: sortReducer
+})
